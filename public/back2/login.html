@@ -5,6 +5,7 @@
 	<title>Document</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link rel="stylesheet" href="./lib/bootstrap/css/bootstrap.css">
+	<link rel="stylesheet" href="./lib/bootstrap-validator/css/bootstrapValidator.min.css">
 	<!-- 引入自己的css -->
 	<link rel="stylesheet" href="./css/common.css">
 </head>
@@ -20,17 +21,17 @@
 			</div>
 			<!-- 内容 -->
 			<div class="panel-body">
-				<form class="form-horizontal">
+				<form class="form-horizontal" id="form">
 					<div class="form-group">
 					  <label for="username" class="col-sm-3 control-label">用户名:</label>
 					  <div class="col-sm-9">
-						<input type="text" class="form-control" id="username" placeholder="请输入用户名">
+						<input type="text" class="form-control" id="username" name="username" placeholder="请输入用户名">
 					  </div>
 					</div>
 					<div class="form-group">
 					  <label for="password" class="col-sm-3 control-label">密　码:</label>
 					  <div class="col-sm-9">
-						<input type="password" class="form-control" id="password" placeholder="密码">
+						<input type="password" class="form-control" id="password" name="password" placeholder="密码">
 					  </div>
 					</div>
 					<div class="form-group">
@@ -47,5 +48,7 @@
 
 <script src="./lib/jquery/jquery.min.js"></script>
 <script src="./lib/bootstrap/js/bootstrap.min.js"></script>
+<script src="./lib/bootstrap-validator/js/bootstrapValidator.js"></script>
+<script src="./js/login.js"></script>
 </body>
 </html>

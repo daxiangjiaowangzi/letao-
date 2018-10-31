@@ -1,3 +1,25 @@
+/* 全局样式部分 */
+
+a:link,
+a:visit,
+a:hover,
+a:active {
+    text-decoration:none;
+}
+
+img {
+    display: block;
+    width:100%;
+}
+
+ul {
+    margin: 0;
+    padding: 0;
+    list-style:none;
+}
+
+
+/* login页面的样式 */
 .body_bg {
     background-color: #222d32;
 }
@@ -10,4 +32,74 @@
 
 .mt_150 {
     margin-top: 150px;
+}
+
+/* index页面 左侧侧边栏布局 */
+.lt_side {
+    width:180px;
+    height:100%;
+    background-color:#222D32;
+    position:fixed;
+    top:0px;
+    left:0px;
+}
+
+.lt_side .brand {
+    width:180px;
+    height:40px;
+    background-color:#367FA9;
+    text-align:center;
+}
+
+.lt_side .brand a {
+    font-size:20px;
+    display: block;
+    color:#fff;
+    line-height: 40px;
+    text-decoration:none;
+}
+
+.lt_side .user {
+    padding-top:20px;
+    padding-bottom:20px;
+}
+
+.lt_side .user img {
+    width:80px;
+    height:80px;
+    margin:0 auto;
+    border-radius:50%;
+}
+
+.lt_side .user p {
+    line-height:2px;
+    text-align: center;
+    color:#fff;
+    font-size:18px;
+    padding-top:10px;
+}
+
+.lt_side .nav a {
+    display:block;
+    height:40px;
+    line-height:40px;
+    color:#fff;
+    font-size:16px;
+    padding-left:40px;
+    border-left:3px solid transparent;
+    text-decoration: none;
+}
+
+.lt_side .nav a i {
+    margin-right:4px;
+}
+
+.lt_side .nav .children a {
+    padding-left:60px;
+    display:none;
+}
+
+.lt_side .nav a.active {
+    background-color: #1d1f2e;
+    border-left:3px solid #069;
 }

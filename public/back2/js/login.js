@@ -83,7 +83,7 @@ $(function(){
 
     })
 
-    // 重置功能
+    // 重置功能 注意这里的重置按钮reset本身就可以重置表单的
     $("[type='reset']").click(function(){
         //注意要像创建插件实例 然后用实例去调用方法
         $("#form").data("bootstrapValidator").resetForm(true);

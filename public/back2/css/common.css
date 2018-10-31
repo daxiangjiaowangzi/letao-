@@ -121,7 +121,7 @@ ul {
     padding-top:50px;
     padding-left:180px;
     height:1000px;
-    background-color:pink;  
+    /* background-color:pink;   */
     transition:all 1s;
 }
 
@@ -138,6 +138,7 @@ ul {
     background-color:#3c8dbc;
     padding-left:180px;
     transition:all 1s;
+    z-index:666;
 }
 
 .lt_topbar.hiddenmenu {

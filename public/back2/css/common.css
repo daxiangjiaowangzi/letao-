@@ -158,3 +158,10 @@ ul {
     padding:10px;
 }
 
+.lt_main .echarts_left,
+.lt_main .echarts_right {
+    width:48%;         /*这边用流式布局宽百分比 高固定 这里为什么不设置50% 让两个图左浮动和右浮动 不要贴太近*/
+    height:400px;
+    background-color:skyblue;
+}
+

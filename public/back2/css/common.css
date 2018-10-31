@@ -18,6 +18,9 @@ ul {
     list-style:none;
 }
 
+.red {
+    color:#a94442;
+}
 
 /* login页面的样式 */
 .body_bg {
@@ -43,6 +46,11 @@ ul {
     top:0px;
     left:0px;
     z-index:999;
+    transition: all 1s;
+}
+
+.lt_side.hiddenmenu{
+    left:-180px;
 }
 
 .lt_side .brand {
@@ -95,9 +103,12 @@ ul {
     margin-right:4px;
 }
 
+.lt_side .nav .children {
+    display:none;
+}
+
 .lt_side .nav .children a {
     padding-left:60px;
-    display:none;
 }
 
 .lt_side .nav a.active {
@@ -111,6 +122,11 @@ ul {
     padding-left:180px;
     height:1000px;
     background-color:pink;  
+    transition:all 1s;
+}
+
+.lt_main.hiddenmenu {
+    padding-left:0;
 }
 
 .lt_topbar {
@@ -121,6 +137,11 @@ ul {
     left:0;
     background-color:#3c8dbc;
     padding-left:180px;
+    transition:all 1s;
+}
+
+.lt_topbar.hiddenmenu {
+    padding-left:0;
 }
 
 .lt_topbar .icon_menu,

@@ -22,17 +22,17 @@
 		</div>
 		<div class="nav">
 			<ul>
-				<li><a href="#"><i class="glyphicon glyphicon-user"></i><span>演唱会门票</span></a></li>
-				<li><a href="#"><i class="glyphicon glyphicon-tags"></i><span>粉丝见面会</span></a></li>
+				<li><a href="user.html"><i class="glyphicon glyphicon-user"></i><span>演唱会门票</span></a></li>
+				<li><a href="javascript:;"><i class="glyphicon glyphicon-tags"></i><span>粉丝见面会</span></a></li>
 				<li>
-					<a href="#"><i class="glyphicon glyphicon-list"></i><span>MV视频</span></a>
+					<a class="category" href="javascript:;"><i class="glyphicon glyphicon-list"></i><span>MV视频</span></a>
 					<!-- 二级列表 -->
 					<div class="children">
-						<a href="#">青花瓷</a>
-						<a href="#">双节棍</a>
+						<a href="first.html">青花瓷</a>
+						<a href="second.html">双节棍</a>
 					</div>
 				</li>
-				<li><a href="#"><i class="glyphicon glyphicon-tags"></i><span>个人奖项</span></a></li>
+				<li><a href="product.html"><i class="glyphicon glyphicon-tags"></i><span>个人奖项</span></a></li>
 			</ul>
 		</div>
 	</div>
@@ -50,8 +50,25 @@
 			</ol>
 		</div>
 	</div>
-
-
+ 
+	<!-- 模态框 -->
+	<div id="myModal" class="modal fade" tabindex="-1" >
+			<div class="modal-dialog modal-xs" >
+			  <div class="modal-content">
+				<div class="modal-header">
+				  <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+				  <h4 class="modal-title">爱的提示</h4>
+				</div>
+				<div class="modal-body">
+				  <p class="red"><i class="glyphicon glyphicon-info-sign"></i>　你确定要拒绝jay的邀请吗？</p>
+				</div>
+				<div class="modal-footer">
+				  <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+				  <button type="button" class="btn btn-primary" id="logoutBtn">退出</button>
+				</div>
+			  </div><!-- /.modal-content -->
+			</div><!-- /.modal-dialog -->
+		  </div><!-- /.modal -->
 
 
 
@@ -61,6 +78,8 @@
 <script src="./lib/bootstrap/js/bootstrap.min.js"></script>
 <script src="./lib/bootstrap-validator/js/bootstrapValidator.js"></script>
 <script src="./lib/nprogress/nprogress.js"></script>
+<!-- 判断用户登录状态 -->
+<script src="./js/checkLogin.js"></script>
 <script src="./js/common.js"></script>
 
 

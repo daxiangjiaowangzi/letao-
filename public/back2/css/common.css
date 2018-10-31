@@ -22,6 +22,14 @@ ul {
     color:#a94442;
 }
 
+/* 让所有的表格里面的内容都居中 这里注意权重问题*/
+.table.table-bordered th,
+.table.table-bordered td {
+    text-align: center;
+    vertical-align: middle;
+}
+
+
 /* login页面的样式 */
 .body_bg {
     background-color: #222d32;

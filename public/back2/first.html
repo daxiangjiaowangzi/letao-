@@ -50,7 +50,7 @@
 				<li class="active">青花瓷</li>                
 			</ol>
 
-			<button class="btn btn-default mg_20">添加分类</button>
+			<button class="btn btn-default mg_20" id="addBtn">添加分类</button>
 
 			<!-- 表格 -->
 			<table class="table table-bordered table-hover">
@@ -64,6 +64,7 @@
 					<!-- 挖个坑 -->
 				</tbody>
 			</table>
+
 			<div class="pull-right">
 					<ul id="paginator"></ul>
 			</div>
@@ -71,6 +72,32 @@
 
 		</div>
 	</div>
+
+
+	<!-- 点击添加分类 跳出来的模态框 -->
+	<div id="addModal" class="modal fade" tabindex="-1" >
+			<div class="modal-dialog modal-xs" >
+			  <div class="modal-content">
+				<!-- 最外层套了一个form 不会影响布局 原因是要input 和 下面的 submit按钮关联起来  -->
+				<form id="form"> 
+					<div class="modal-header">
+				  <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+				  <h4 class="modal-title">添加分类</h4>
+					</div>
+					<div class="modal-body">
+					<div class="form-group">
+						<!-- bootstrap要求input外层 套一个 form-group 做表单验证时 如果不加form-group会报错  注意 input 里面不要忘记加name属性 因为要向后台提交-->
+						<input type="text" name="categoryName" class="form-control" placeholder="请输入一级分类">
+					</div>
+					</div>
+					<div class="modal-footer">
+				  <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+				  <button type="submit" class="btn btn-primary" >添加</button>
+					</div>
+				</form>
+			  </div><!-- /.modal-content -->
+			</div><!-- /.modal-dialog -->
+		  </div><!-- /.modal -->
  
 	<!-- 模态框 -->
 	<div id="myModal" class="modal fade" tabindex="-1" >

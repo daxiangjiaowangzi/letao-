@@ -178,3 +178,9 @@ ul {
     margin-bottom:20px;
 }
 
+.lt_main tbody img {
+    width:auto;
+    margin:0 auto;
+    display: block;
+}
+

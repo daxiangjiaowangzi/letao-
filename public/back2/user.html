@@ -61,20 +61,37 @@
 						</tr>
 					</thead>
 					<tbody>
-						<tr>
-							<td>1</td>
-							<td>itcast</td>
-							<td>129483269</td>
-							<td>正常</td>
-							<td>
-								<button class="btn btn-danger">禁用</button>
-							</td>
-						</tr>
+						<!-- 挖个坑 -->
 					</tbody>
 				</table>
+
+				<!-- 给分页插件准备一个容器 -->
+				<div class="pull-right"> 
+					<ul id="paginator"></ul>
+				</div>
+				
 			</div>
 		</div>
 	</div>
+
+	<!-- 点击禁用按钮/或者启用按钮 跳出来的模态框 -->
+	<div id="addModal" class="modal fade" tabindex="-1" >
+			<div class="modal-dialog modal-xs" >
+			  <div class="modal-content">
+				<div class="modal-header">
+				  <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+				  <h4 class="modal-title">爱的提示</h4>
+				</div>
+				<div class="modal-body">
+				  <p class="red"><i class="glyphicon glyphicon-info-sign"></i> Are you sure badboy？</p>
+				</div>
+				<div class="modal-footer">
+				  <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+				  <button type="button" class="btn btn-primary" id="submitBtn">确定</button>
+				</div>
+			  </div><!-- /.modal-content -->
+			</div><!-- /.modal-dialog -->
+		  </div><!-- /.modal -->
  
 	<!-- 模态框 -->
 	<div id="myModal" class="modal fade" tabindex="-1" >
@@ -96,6 +113,27 @@
 		  </div><!-- /.modal -->
 
 
+<script type="text/html" id="tmp">
+	{{ each rows v i}}
+	<tr>
+			<!-- 注意这里的序号 当前序号 加上前面页码数乘以每页的数据条数 -->
+			<td>{{(i+1)+(page-1)*size}}</td>
+			<td>{{v.username}}</td>
+			<td>{{v.mobile}}</td>
+			<!-- isDelete用于标记当前用户状态 1表示当前用户是启用状态 0表示当前用户是禁用状态	 -->
+			<td>{{v.isDelete ===1 ? "正常" : "已禁用"}}</td>
+			<!-- 将id存在自定义属性中 -->
+			<td data-id="{{ v.id }}"> 
+				{{if v.isDelete === 1}}
+				<button class="btn btn-danger">禁用</button>
+				{{ else }}
+				<button class="btn btn-success">启用</button>
+				{{/if}}
+			</td>
+		</tr>
+	{{ /each }}
+</script>
+
 
 
 
@@ -103,9 +141,12 @@
 <script src="./lib/bootstrap/js/bootstrap.min.js"></script>
 <script src="./lib/bootstrap-validator/js/bootstrapValidator.js"></script>
 <script src="./lib/nprogress/nprogress.js"></script>
+<script src="./lib/artTemplate/template-web.js"></script>
+<script src="./lib/bootstrap-paginator/bootstrap-paginator.min.js"></script>
 <!-- 判断用户登录状态 -->
 <script src="./js/checkLogin.js"></script>
 <script src="./js/common.js"></script>
+<script src="./js/user.js"></script>
 
 
 </body>

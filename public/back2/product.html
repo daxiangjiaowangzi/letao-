@@ -66,15 +66,7 @@
 					</tr>
 				</thead>
 				<tbody>
-						<td>1</td>
-						<td>【莹恋】MIZUNO美津浓V9304乒乓球鞋男鞋女鞋室内综合训练鞋</td>
-						<td>描述19034</td>
-						<td>44</td>
-						<td>35-56</td>
-						<td>已上架</td>
-						<td>
-							<button class="btn btn-danger">下架</button>
-						</td>
+					<!-- 挖个坑 -->
 				</tbody>
 			</table>
 
@@ -89,7 +81,7 @@
 
 	<!-- 点击添加分类 跳出来的模态框 -->
 	<div id="addModal" class="modal fade" tabindex="-1" >
-			<div class="modal-dialog modal-xs" >
+			<div class="modal-dialog" >
 			  <div class="modal-content">
 				<!-- 最外层套了一个form 不会影响布局 原因是要input 和 下面的 submit按钮关联起来  -->
 				<form id="form"> 
@@ -101,34 +93,60 @@
 						<div class="form-group">
 								<div class="dropdown">
 										<button class="btn btn-default dropdown-toggle" type="button"  data-toggle="dropdown" >
-											<span id="dropdownText">请选择一级分类</span> 
+											<span id="dropdownText">请选择二级分类</span> 
 											<span class="caret"></span>
 										</button>
 										<ul class="dropdown-menu">
 										<!-- 挖个坑 -->
 										</ul>
 									</div>
-								<!-- 一级分类id -->
-								<input type="hidden" name="categoryId" id="daxiangjiao">
-								<!-- 火热的品牌 hot -->
-								<input type="hidden" name="hot" value="1">
+								<!-- 二级分类id -->
+								<input type="hidden" name="brandId" id="daxiangjiao">
+								<!-- 上下架 默认上架 -->
+								<input type="hidden" name="statu" value="1">
 						</div>
 
 					<div class="form-group">
 						<!-- bootstrap要求input外层 套一个 form-group 做表单验证时 如果不加form-group会报错  注意 input 里面不要忘记加name属性 因为要向后台提交-->
-						<input type="text" name="brandName" class="form-control" placeholder="请输入二级分类">
+						<input type="text" name="proName" class="form-control" placeholder="请输入商品名称">
+					</div>
+
+					<div class="form-group">
+						<textarea type="text"  name="proDesc" class="form-control" placeholder="请输入商品描述" rows="3"></textarea>
+					</div>
+
+					<div class="form-group">
+						<!-- bootstrap要求input外层 套一个 form-group 做表单验证时 如果不加form-group会报错  注意 input 里面不要忘记加name属性 因为要向后台提交-->
+						<input type="text" name="num" class="form-control" placeholder="请输入商品库存">
+					</div>
+
+					<div class="form-group">
+						<!-- bootstrap要求input外层 套一个 form-group 做表单验证时 如果不加form-group会报错  注意 input 里面不要忘记加name属性 因为要向后台提交-->
+						<input type="text" name="size" class="form-control" placeholder="请输入商品尺码">
+					</div>
+
+					<div class="form-group">
+						<!-- bootstrap要求input外层 套一个 form-group 做表单验证时 如果不加form-group会报错  注意 input 里面不要忘记加name属性 因为要向后台提交-->
+						<input type="text" name="oldPrice" class="form-control" placeholder="请输入商品原价">
+						</div>
+
+					<div class="form-group">
+						<!-- bootstrap要求input外层 套一个 form-group 做表单验证时 如果不加form-group会报错  注意 input 里面不要忘记加name属性 因为要向后台提交-->
+						<input type="text" name="price" class="form-control" placeholder="请输入商品现价">
 					</div>
 
 					<div class="form-group">
 						<label class="btn btn-default" for="fileupload">上传图片</label>
 						<!-- name 指定后台用于接收的参数名 data-url后台文件上传的接口地址 -->
-						<input type="file" name="pic1" data-url="/category/addSecondCategoryPic" id="fileupload" style="display:none">
+						<input type="file" name="pic1" data-url="/product/addProductPic" id="fileupload" style="display:none"
+						multiple>
 					</div>
 
 					<div class="form-group" id="imgBox">
-							<img src="./images/none.png" alt="">
-							<input type="hidden" name="brandLogo" id="daxiangjiao2">
-						</div>
+						<!-- <img src="./images/none.png" alt=""> -->
+						<!-- 标记当前文件是否上传满三张 -->
+						<input type="hidden" name="picStatus">
+					</div>
 
 					</div>
 					<div class="modal-footer">
@@ -160,9 +178,31 @@
 		  </div><!-- /.modal -->
 
 
+<script type="text/html" id="productTmp">
+{{each rows v i}}
+<tr>
+	<td>{{(i+1)+(page-1)*size}}</td>
+	<td>{{v.proName}}</td>
+	<td>{{v.proDesc}}</td>
+	<td>{{v.num}}</td>
+	<td>{{v.size}}</td>
+	<td>{{v.statu === 1 ? '已上架' : '已下架'}}</td>
+	<td>
+		{{if v.statu === 1}}
+		<button class="btn btn-danger">下架</button>
+		{{else}}
+		<button class="btn btn-success">上架</button>
+		{{/if}}
+	</td>
+</tr>
+{{/each}}
+</script>
 
-
-
+<script type="text/html" id="dropdownTmp">
+{{each rows v i}}
+	<li><a data-id="{{ v.id }}" href="#">{{ v.brandName }}</a></li>
+{{/each}}
+</script>
 
 
 
@@ -179,6 +219,7 @@
 <!-- 判断用户登录状态 -->
 <script src="./js/checkLogin.js"></script>
 <script src="./js/common.js"></script>
+<script src="./js/product.js"></script>
 
 
 

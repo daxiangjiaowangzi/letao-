@@ -184,3 +184,8 @@ ul {
     display: block;
 }
 
+#addModal img {
+    width:auto;
+    height: 100px;
+}
+

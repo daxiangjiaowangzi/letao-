@@ -87,10 +87,38 @@
 				  <h4 class="modal-title">添加分类</h4>
 					</div>
 					<div class="modal-body">
+						<div class="form-group">
+								<div class="dropdown">
+										<button class="btn btn-default dropdown-toggle" type="button"  data-toggle="dropdown" >
+											<span id="dropdownText">请选择一级分类</span> 
+											<span class="caret"></span>
+										</button>
+										<ul class="dropdown-menu">
+										<!-- 挖个坑 -->
+										</ul>
+									</div>
+								<!-- 一级分类id -->
+								<input type="hidden" name="categoryId" id="daxiangjiao">
+								<!-- 火热的品牌 hot -->
+								<input type="hidden" name="hot" value="1">
+						</div>
+
 					<div class="form-group">
 						<!-- bootstrap要求input外层 套一个 form-group 做表单验证时 如果不加form-group会报错  注意 input 里面不要忘记加name属性 因为要向后台提交-->
-						<input type="text" name="categoryName" class="form-control" placeholder="请输入一级分类">
+						<input type="text" name="brandName" class="form-control" placeholder="请输入二级分类">
 					</div>
+
+					<div class="form-group">
+						<label class="btn btn-default" for="fileupload">上传图片</label>
+						<!-- name 指定后台用于接收的参数名 data-url后台文件上传的接口地址 -->
+						<input type="file" name="pic1" data-url="/category/addSecondCategoryPic" id="fileupload" style="display:none">
+					</div>
+
+					<div class="form-group" id="imgBox">
+							<img src="./images/none.png" alt="">
+							<input type="hidden" name="brandLogo" id="daxiangjiao2">
+						</div>
+
 					</div>
 					<div class="modal-footer">
 				  <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
@@ -135,8 +163,18 @@
 {{/each}}
 </script>
 
+<script type="text/html" id="dropdownTmp">
+{{ each rows v i}}
+<li><a data-id="{{ v.id }}" href="#">{{v.categoryName}}</a></li>
+{{/each}}
+</script>
+
 
 <script src="./lib/jquery/jquery.min.js"></script>
+<!-- 上传文件用到的插件需要的包 -->
+<script src="./lib/jquery-fileupload/jquery.ui.widget.js"></script>
+<script src="./lib/jquery-fileupload/jquery.fileupload.js"></script>
+
 <script src="./lib/bootstrap/js/bootstrap.min.js"></script>
 <script src="./lib/bootstrap-validator/js/bootstrapValidator.js"></script>
 <script src="./lib/nprogress/nprogress.js"></script>

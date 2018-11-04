@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="viewport"
+        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <title>乐淘手机页</title>
+    <link rel="icon" href="favicon.ico">
+    <!-- 引入字体图标库 -->
+    <link rel="stylesheet" href="./lib/fa/css/font-awesome.min.css">
+    <link rel="stylesheet" href="./lib/mui/css/mui.min.css">
+    <link rel="stylesheet" href="./css/common.css">
+    <link rel="stylesheet" href="./css/searchList.css">
+</head>
+<body>
+<!-- 由于中间内容是区域滚动 所以需要一个全屏容器 -->
+<div class="container">
+    <div class="lt_header">
+        <h3>搜索结果</h3>
+    </div>
+    <div class="lt_main">
+        <!-- 使用区域滚动 容器需要添加定位 -->
+        <div class="mui-scroll-wrapper">
+            <div class="mui-scroll">
+               
+                <!-- 搜索框 -->
+                <div class="lt_search">
+                    <input class="search_input" type="text" placeholder="请输入您要搜索的歌曲">
+                    <button class="mui-btn mui-btn-primary btn_search">搜索</button>
+                </div>
+
+                <!-- 乐淘排序 -->
+                <div class="lt_sort umi-clearfix">
+                    <a href="#"><i class="fa fa-angle-down">上架时间</i></a>
+                    <a class="current" href="#"><i class="fa fa-angle-down">价格</i></a>
+                    <a href="#"><i class="fa fa-angle-down">库存</i></a>
+                    <a href="#"><i class="fa fa-angle-down">折扣</i></a>
+                </div>
+
+                 <!-- 商品 -->
+                 <div class="lt_product">
+                        <ul class="mui-clearfix">
+                            <li>
+                               <a href="#">
+                                <img src="./images/product.jpg" alt="">
+                                <p class="mui-ellipsis-2">adidas 阿迪达斯 男式 场下休闲球鞋S97025720024790427</p>
+                                <p><span class="price">&yen;560</span><span class="oldPrice">&yen;580</span></p>
+                                <p><button class="mui-btn mui-btn-primary">立即购买</button></p>
+                                </a>
+                            </li>
+                            <li>
+                               <a href="#">
+                                 <img src="./images/product.jpg" alt="">
+                                 <p class="mui-ellipsis-2">adidas 阿迪达斯 男式 场下休闲球鞋S97025720024790427</p>
+                                 <p><span class="price">&yen;560</span><span class="oldPrice">&yen;580</span></p>
+                                 <p><button class="mui-btn mui-btn-primary">立即购买</button></p>
+                               </a>
+                            </li>
+                            <li>
+                               <a href="#">
+                                 <img src="./images/product.jpg" alt="">
+                                 <p class="mui-ellipsis-2">adidas 阿迪达斯 男式 场下休闲球鞋S97025720024790427</p>
+                                 <p><span class="price">&yen;560</span><span class="oldPrice">&yen;580</span></p>
+                                 <p><button class="mui-btn mui-btn-primary">立即购买</button></p>
+                               </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                  <img src="./images/product.jpg" alt="">
+                                  <p class="mui-ellipsis-2">adidas 阿迪达斯 男式 场下休闲球鞋S97025720024790427</p>
+                                  <p><span class="price">&yen;560</span><span class="oldPrice">&yen;580</span></p>
+                                  <p><button class="mui-btn mui-btn-primary">立即购买</button></p>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+            </div>
+        </div> 
+    </div>
+    <div class="lt_footer">
+        <ul class="mui-clearfix">
+            <li>
+                <a href="index.html">
+                  <i class="fa fa-home"></i>
+                  <p>首页</p>
+                </a>
+            </li>
+            <li>
+                <a href="category.html">
+                  <i class="fa fa-home"></i>
+                  <p>分类页</p>
+                </a>
+            </li>
+            <li>
+                <a href="index.html">
+                  <i class="fa fa-home"></i>
+                  <p>首页</p>
+                </a>
+            </li>
+            <li>
+               <a href="index.html">
+                  <i class="fa fa-home"></i>
+                  <p>首页</p>
+                </a>
+            </li>
+        </ul>
+    </div>
+</div>
+
+<script type="text/html" id="historyTmp">
+{{if list.length===0}}
+  <p>没有更多数据了</p>
+{{else}}
+<div class="title">
+        <span class="mui-pull-left">搜索历史</span>
+        <span class="mui-pull-right btn_empty"><i class="fa fa-trash"></i>清空记录</span>
+    </div>
+<div class="content">
+    <ul>
+        {{each list v i}}
+        <li>
+            <a href="searchList.html?key={{ v }}" class="mui-pull-left">{{ v }}</a>
+            <i class="mui-icon mui-icon-closeempty pull-right btn_delete" data-index="{{i}}"></i>
+        </li>
+        {{/each}}
+    </ul>
+</div>
+{{/if}}
+</script>
+
+
+<script src="./lib/mui/js/mui.js"></script>
+<script src="./lib/zepto/zepto.min.js"></script>
+<script src="./lib/artTemplate/template-web.js"></script>
+<script src="./js/common.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,21 @@
+
+.lt_sort {
+    padding:10px;
+}
+
+.lt_sort a {
+    float:left;
+    width:25%;
+    height:30px;
+    line-height: 30px;
+    color:#ccc;
+    background:#666;
+    font-size: 14px;
+    text-align:center;
+    margin-bottom:15px;
+}
+
+.lt_sort a.current {
+    color:red;
+    background:black;
+}

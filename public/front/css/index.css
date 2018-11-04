@@ -6,3 +6,41 @@
     float:left;
     width:33.3%;
 }
+
+/* 商品模块 */
+.lt_product {
+    padding:10px;
+}
+
+.lt_product ul li {
+    float: left;
+    width:48%;
+    border:1px solid #666;
+    border-radius:5px;
+    margin-bottom:15px;
+}
+
+.lt_product ul li:nth-child(2n-1) {
+    margin-right:4%;
+} 
+
+.lt_product ul li img {
+    width:130px;
+    height:130px;
+    margin:0 auto;
+}
+
+.lt_product ul li a {
+    display: block;
+    padding: 1px;
+    text-align: center;
+}
+
+.lt_product .price {
+    color:red;
+}
+
+.lt_product .oldPrice {
+    margin-left:5px;
+    text-decoration: line-through;
+}

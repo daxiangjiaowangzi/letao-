@@ -164,3 +164,7 @@ img {
     margin-left:5px;
     text-decoration: line-through;
 }
+
+.lt_product .mui-ellipsis-2 {
+    height: 40px;
+}

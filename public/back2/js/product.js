@@ -80,9 +80,9 @@ $(function(){
             var picUrl = picObj.picAddr;//获取图片路径
 
             picArr.unshift(picObj);//往数组的最前面添加一个数据
-
-            $('#imgBox').prepend('"<img src="'+picUrl+'" alt="" >');//往imgbox这个元素里添加图片让其显示（设置img的src 并添加到imgBox的最前面）
             
+            $('#imgBox').prepend('<img src="'+picUrl+ '"alt="" >');//往imgbox这个元素里添加图片让其显示（设置img的src 并添加到imgBox的最前面）
+        
             //当数组大于3时应该删除掉最后一个
             //1.之前定义的那个存放图片信息的数组的最后一个删掉（js中的）
             //2.在imgBox里面的图片元素也要删掉（html结构中的）
@@ -192,8 +192,8 @@ $(function(){
         var params = $('#form').serialize();
         //params += "&picName1=xx&picAddr1=xx";
         params += "&picName1="+picArr[0].picName+"&picAddr1="+ picArr[0].picAddr;
-        params += "&picName1="+picArr[1].picName+"&picAddr1="+ picArr[1].picAddr; 
-        params += "&picName1="+picArr[2].picName+"&picAddr1="+ picArr[2].picAddr; 
+        params += "&picName2="+picArr[1].picName+"&picAddr2="+ picArr[1].picAddr; 
+        params += "&picName3="+picArr[2].picName+"&picAddr3="+ picArr[2].picAddr; 
 
         $.ajax({
             type:'post',
@@ -209,7 +209,10 @@ $(function(){
                 $('#form').data("bootstrapValidator").resetForm(true);
                 //重置文本和图片
                 $('#dropdownText').text("请选择二级分类");
+                // console.log($('#imgBox img'))
                 $('#imgBox img').remove(); 
+
+                picArr = [];//注意这里别忘了清空上面定义的那个数组 不然会导致后面的图片无法显示 因为后面加了判断语句if picArr.length>3 时...
             }
         })
     })

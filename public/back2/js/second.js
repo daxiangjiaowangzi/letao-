@@ -131,7 +131,7 @@ $(function(){
         }
     })
 
-    //添加表单验证成功事件 
+    //添加表单验证成功事件  向后台发送ajax请求添加分类等 然后关闭模态框 并且 重置表单内容（包括隐藏域中的两个 需要我们手动的来重置）
     $('#form').on('success.form.bv',function(e){
         e.preventDefault();
 
@@ -148,10 +148,10 @@ $(function(){
                 render();
 
                 $('#form').data('bootstrapValidator').resetForm('true');
+                //上面的表单重置只能重置一部分 下面两个隐藏域内的元素要我们自己来手动的重置掉
+                $('#dropdownText').text("请选择一级分类"); //一级分类选项中的内容重置
 
-                $('#dropdownText').text("请选择一级分类");
-
-                $('#imgBox img').attr('src','images/none.png')
+                $('#imgBox img').attr('src','images/none.png')//图片中的内容重置为最原始的图片
 
             }
         })

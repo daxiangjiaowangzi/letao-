@@ -64,12 +64,12 @@ $(function(){
                 }
 
                 if(info.success) {
-                    mui.confirm("添加成功",'温馨提示',['去购物车','继续浏览',function(e){
+                    mui.confirm("添加成功",'温馨提示',['去购物车','继续浏览'],function(e){
                         //通过e.index来判断用户点击的是那个按钮
                         if(e.index===0) {
                             location.href = 'cart.html';
                         }
-                    }])
+                    })
                 }
             }
         })

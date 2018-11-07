@@ -13,6 +13,7 @@ $(function(){
 
     //根据关键字发送请求 渲染页面
     function render() {
+        //让数据在loading的时候 在页面中添加有一个方框在转的效果（一般数据请求是需要时间的嘛）
         $('.lt_product').html('<div class="loading"></div>');
         //定义一个空对象
         var obj = {};
